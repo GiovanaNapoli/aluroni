@@ -5,7 +5,9 @@ import {ReactComponent as Logo} from 'assets/logo.svg'
 import Filtros from './FIltros'
 
 export default function Cardapio() {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('');
+  const [filtro, setFiltros] = useState<number | null>(null);
+
   return (
     <main>
       <nav className={styles.menu}>
@@ -20,7 +22,7 @@ export default function Cardapio() {
         <h3 className={styles.cardapio__titulo}>Cardápio</h3>
         <Buscador search={search} setSearch={setSearch} />
         <div className={styles.cardapio__filtros}>
-          <Filtros />
+          <Filtros filtro={filtro} setFiltros={setFiltros} />
         </div>
       </section>
     </main>
