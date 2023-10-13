@@ -1,26 +1,31 @@
 import logo from 'assets/logo.svg'
 import styles from './item.module.scss'
+import cardapio from '../itens.json'
+import classNames from 'classnames';
 
-type IItem = {
+type IItem = typeof cardapio[0];
 
-}
+export default function Item (item: IItem){
+  const {category, description, id, photo, price, serving, size, title} = item;
 
-export default function Item (){
   return (
     <div className={styles.item}>
       <div className={styles.item__image}>
-        <img src={logo} alt="img" />
+        <img src={logo} alt={title} />
       </div>
       <div className={styles.item__descricao}>
         <div className={styles.item__titulo}>
-          <h2>macarrão</h2>
-          <p>descricao</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
         </div>
         <div className={styles.item__tags}>
-          <div className={styles.item__tipo}>Massa</div>
-          <div className={styles.item__porcao}>400g</div>
-          <div className={styles.item__qtdpessoas}>serve 2 pessoas</div>
-          <div className={styles.item__valor}>R$10.00</div>
+          <div className={classNames({
+            [styles.item__tipo]: true,
+            [styles[`item__tipo__${category.label.toLowerCase()}`]]: true
+          })}>{category.label}</div>
+          <div className={styles.item__porcao}>{size}</div>
+          <div className={styles.item__qtdpessoas}>{serving}</div>
+          <div className={styles.item__valor}>R${price.toFixed(2)}</div>
         </div>
       </div>
     </div>
