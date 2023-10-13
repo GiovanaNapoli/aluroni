@@ -3,13 +3,13 @@ import Buscador from './Buscador'
 import styles from './Cardapio.module.scss'
 import {ReactComponent as Logo} from 'assets/logo.svg'
 import Filtros from './FIltros'
-import Ordenador from './Ordenador'
+import Ordenador, {OpcoesOrdenador} from './Ordenador'
 import Itens from './Itens'
 
 export default function Cardapio() {
   const [search, setSearch] = useState('');
   const [filtro, setFiltros] = useState<number | null>(null);
-  const [ordenador, setOrdenador] = useState('')
+  const [ordenador, setOrdenador] = useState<OpcoesOrdenador>('')
 
   return (
     <main>

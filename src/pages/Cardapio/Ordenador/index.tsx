@@ -4,9 +4,10 @@ import opcoes from './opcoes.json'
 import classNames from 'classnames';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
 
+export type OpcoesOrdenador = ''|'procao'|'qtd_pessoas'|'preco';
 interface IOrdenador {
-  ordenador: string;
-  setOrdenador: React.Dispatch<React.SetStateAction<string>>
+  ordenador: OpcoesOrdenador;
+  setOrdenador: React.Dispatch<React.SetStateAction<OpcoesOrdenador>>
 }
 
 export default function Ordenador ({ordenador, setOrdenador}: IOrdenador){
@@ -28,7 +29,7 @@ export default function Ordenador ({ordenador, setOrdenador}: IOrdenador){
           <div 
             className={styles.ordenador__option} 
             key={value} 
-            onClick={() => setOrdenador(value)}>
+            onClick={() => setOrdenador(value as OpcoesOrdenador)}>
             {nome}
           </div>
         ))}
