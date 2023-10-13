@@ -24,7 +24,7 @@ export default function Item (item: IItem){
             [styles[`item__tipo__${category.label.toLowerCase()}`]]: true
           })}>{category.label}</div>
           <div className={styles.item__porcao}>{size}</div>
-          <div className={styles.item__qtdpessoas}>{serving}</div>
+          <div className={styles.item__qtdpessoas}>Serve {serving} pessoa</div>
           <div className={styles.item__valor}>R${price.toFixed(2)}</div>
         </div>
       </div>

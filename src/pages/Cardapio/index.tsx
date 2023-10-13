@@ -9,7 +9,7 @@ import Itens from './Itens'
 export default function Cardapio() {
   const [search, setSearch] = useState('');
   const [filtro, setFiltros] = useState<number | null>(null);
-  const [ordenador, setOrdenador] = useState("")
+  const [ordenador, setOrdenador] = useState('')
 
   return (
     <main>
@@ -28,7 +28,7 @@ export default function Cardapio() {
           <Filtros filtro={filtro} setFiltros={setFiltros} />
           <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
         </div>
-        <Itens />
+        <Itens filtro={filtro} busca={search} ordenador={ordenador} />
       </section>
     </main>
   )
