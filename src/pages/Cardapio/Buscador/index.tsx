@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './Buscador.module.scss'
-import {CgSearch} from 'react-icons/cg'
+import React from 'react';
+import styles from './Buscador.module.scss';
+import {CgSearch} from 'react-icons/cg';
 
 interface Props {
   search: string;
@@ -8,11 +8,11 @@ interface Props {
 }
 export default function Buscador ({search, setSearch}: Props) {
   return (
-  <div className={styles.buscador}>
-    <input 
-      value={search} 
-      onChange={(event) => setSearch(event.target.value)} 
-      placeholder='Buscar' />
-    <CgSearch size={20} color="#4c4d5e" />
-  </div>)
+    <div className={styles.buscador}>
+      <input 
+        value={search} 
+        onChange={(event) => setSearch(event.target.value)} 
+        placeholder='Buscar' />
+      <CgSearch size={20} color="#4c4d5e" />
+    </div>);
 }

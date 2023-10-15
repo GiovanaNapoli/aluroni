@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import styles from './Ordenador.module.scss'
-import opcoes from './opcoes.json'
+import React, { useState } from 'react';
+import styles from './Ordenador.module.scss';
+import opcoes from './opcoes.json';
 import classNames from 'classnames';
-import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md'
+import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
 export type OpcoesOrdenador = ''|'procao'|'qtd_pessoas'|'preco';
 interface IOrdenador {
@@ -12,7 +12,7 @@ interface IOrdenador {
 
 export default function Ordenador ({ordenador, setOrdenador}: IOrdenador){
   const [aberto, setAberto] = useState(false);
-  const nomeOrdenador = ordenador && opcoes.find((opcao) => opcao.value === ordenador)?.nome
+  const nomeOrdenador = ordenador && opcoes.find((opcao) => opcao.value === ordenador)?.nome;
 
   return (
     <button className={classNames({
@@ -35,5 +35,5 @@ export default function Ordenador ({ordenador, setOrdenador}: IOrdenador){
         ))}
       </div>
     </button>
-  )
+  );
 }

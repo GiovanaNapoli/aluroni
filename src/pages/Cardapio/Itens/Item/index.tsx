@@ -1,12 +1,12 @@
-import logo from 'assets/logo.svg'
-import styles from './item.module.scss'
-import cardapio from '../itens.json'
+import React from 'react';
+import styles from './item.module.scss';
+import cardapio from '../itens.json';
 import classNames from 'classnames';
 
 type IItem = typeof cardapio[0];
 
 export default function Item (item: IItem){
-  const {category, description, id, photo, price, serving, size, title} = item;
+  const {category, description, photo, price, serving, size, title} = item;
 
   return (
     <div className={styles.item}>
@@ -29,5 +29,5 @@ export default function Item (item: IItem){
         </div>
       </div>
     </div>
-  )
+  );
 }
