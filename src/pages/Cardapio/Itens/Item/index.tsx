@@ -1,6 +1,5 @@
-import React from 'react';
 import styles from './item.module.scss';
-import cardapio from '../itens.json';
+import cardapio from 'data/cardapio.json';
 import classNames from 'classnames';
 
 type IItem = typeof cardapio[0];

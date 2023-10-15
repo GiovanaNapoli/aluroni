@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Buscador from './Buscador';
 import styles from './Cardapio.module.scss';
 import {ReactComponent as Logo} from 'assets/logo.svg';
-import Filtros from './FIltros';
+import Filtros from './Filtros';
 import Ordenador, {OpcoesOrdenador} from './Ordenador';
 import Itens from './Itens';
 
