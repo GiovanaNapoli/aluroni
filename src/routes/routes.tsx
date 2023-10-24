@@ -10,7 +10,7 @@ export default [
   },
   {
     id: 'cardapio',
-    path: '/cardapio',
+    path: 'cardapio',
     element: <Cardapio />,
   },
 ];
