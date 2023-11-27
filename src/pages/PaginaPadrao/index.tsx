@@ -1,4 +1,6 @@
 import styles from './PaginaPadrao.module.scss';
+import theme from 'styles/Tema.module.scss';
+
 import { Outlet } from 'react-router-dom';
 
 export default function PaginaPadrao () {
@@ -9,7 +11,7 @@ export default function PaginaPadrao () {
     A casa do código e da massa
         </div>
       </header>
-      <div>
+      <div className={theme.container}>
         <Outlet />
       </div>
     </>
