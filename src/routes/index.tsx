@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import routes from './routes';
 import Menu from 'components/Menu';
 import PaginaPadrao from 'pages/PaginaPadrao';
+import Footer from 'components/Footer';
 
 export default function AppRoutes(){
   return(
@@ -15,6 +16,7 @@ export default function AppRoutes(){
             </Route>
           ))}
         </Routes>
+        <Footer />
       </Router>
     </main>
   );
