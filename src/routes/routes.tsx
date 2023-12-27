@@ -1,7 +1,6 @@
 
 import Cardapio from 'pages/Cardapio';
 import Inicio from 'pages/Inicio';
-import NotFound from 'pages/NotFound';
 import Sobre from 'pages/Sobre';
 
 export default [
@@ -20,9 +19,4 @@ export default [
     path: 'sobre',
     element: <Sobre />
   },
-  {
-    id: 'not_found',
-    path: '*',
-    element: <NotFound />
-  }
 ];
