@@ -16,11 +16,7 @@ export const primaryRoutes = [
     path: 'sobre',
     element: <Sobre />
   },
-  {
-    id: 'prato',
-    path: 'prato/:id',
-    element: <Prato />
-  }
+  
 ];
 
 export const secondaryRoutes = [
@@ -29,4 +25,9 @@ export const secondaryRoutes = [
     path: '*',
     element: <NotFound />
   },
+  {
+    id: 'prato',
+    path: 'prato/:id',
+    element: <Prato />
+  }
 ];
