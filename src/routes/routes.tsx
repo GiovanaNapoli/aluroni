@@ -1,9 +1,6 @@
+import {Inicio, Cardapio, NotFound, Prato, Sobre} from 'pages';
 
-import Cardapio from 'pages/Cardapio';
-import Inicio from 'pages/Inicio';
-import Sobre from 'pages/Sobre';
-
-export default [
+export const primaryRoutes = [
   {
     id: 'root',
     path: '/',
@@ -18,5 +15,18 @@ export default [
     id: 'sobre',
     path: 'sobre',
     element: <Sobre />
+  },
+  {
+    id: 'prato',
+    path: 'prato/:id',
+    element: <Prato />
+  }
+];
+
+export const secondaryRoutes = [
+  {
+    id: 'notFound',
+    path: '*',
+    element: <NotFound />
   },
 ];

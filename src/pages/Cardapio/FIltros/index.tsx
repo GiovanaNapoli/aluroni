@@ -1,9 +1,8 @@
 import React from 'react';
-import filtros from './filtros.json';
+import filtros from '../../../data/filtros.json';
 import styles from './Filtros.module.scss';
 import classNames from 'classnames';
-
-type OpcaoProps = typeof filtros[0]
+import { Filtro } from 'types/filtros';
 
 interface IFiltros {
   filtro: number | null;
@@ -12,7 +11,7 @@ interface IFiltros {
 
 export default function Filtros({filtro, setFiltros}: IFiltros) {
 
-  const selecionarFiltro = ({id}: OpcaoProps) => {
+  const selecionarFiltro = ({id}: Filtro) => {
     if (filtro === id) return setFiltros(null);
     return setFiltros(id);
   };

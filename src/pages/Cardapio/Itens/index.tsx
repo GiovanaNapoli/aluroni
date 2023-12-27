@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Item from './Item';
 import cardapio from 'data/cardapio.json';
 import styles from './itens.module.scss';
+import { Cardapio } from 'types/prato';
 
 interface IItens {
   filtro: number | null;
@@ -25,7 +26,7 @@ export default function Itens(props: IItens) {
     return true;
   }
 
-  function ordenarPor(novaLista: typeof cardapio) {
+  function ordenarPor(novaLista: Cardapio) {
     switch(ordenador) {
     case 'porcao': 
       return novaLista.sort((a, b) => a.size > b.size ? 1 : -1);

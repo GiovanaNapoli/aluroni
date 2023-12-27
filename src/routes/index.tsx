@@ -1,9 +1,7 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import routes from './routes';
-import Menu from 'components/Menu';
-import PaginaPadrao from 'pages/PaginaPadrao';
-import Footer from 'components/Footer';
-import NotFound from 'pages/NotFound';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { primaryRoutes, secondaryRoutes } from './routes';
+import { Menu, Footer } from 'components';
+import { PaginaPadrao } from 'pages';
 
 export default function AppRoutes(){
   return(
@@ -11,12 +9,14 @@ export default function AppRoutes(){
       <Router>
         <Menu />
         <Routes>
-          {routes.map((route) => (
+          {primaryRoutes.map((route) => (
             <Route key={route.id} path="/" element={<PaginaPadrao />}>
               <Route path={route.path} element={route.element} />
             </Route>
           ))}
-          <Route path='*' element={<NotFound />} />
+          {secondaryRoutes.map((route) => (
+            <Route key={route.id} path={route.path} element={route.element} />
+          ))}
         </Routes>
         <Footer />
       </Router>
